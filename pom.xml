@@ -9,7 +9,7 @@
     <version>0.1</version>
     <name>#NAME</name>
     <description>#DESC</description>
-    <url>https://git.epam.com/Mateusz_Syposz</url>
+    <url>https://github.com/matsyposz</url>
   
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -90,4 +90,3 @@
         </plugins>
     </build>
 </project>
-
