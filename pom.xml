@@ -20,10 +20,11 @@
         <maven.compiler.encoding>${project.build.sourceEncoding}</maven.compiler.encoding>
         <maven.resources.encoding>${project.build.sourceEncoding}</maven.resources.encoding>
         <version.maven>3.5.3</version.maven>
+	<version.plugin.maven.jar>3.1.0</version.plugin.maven.jar>
         <version.plugin.maven.enforcer>3.0.0-M3</version.plugin.maven.enforcer>
         <version.plugin.maven.compiler>3.8.1</version.plugin.maven.compiler>
-	    <version.testng>6.14.3</version.testng>
-    	<mainClass>${groupId}.${artifactId}.App</mainClass>
+	<version.testng>6.14.3</version.testng>
+    	<mainClass>${project.groupId}.${project.artifactId}.App</mainClass>
     </properties>
 
     <dependencies>
@@ -37,6 +38,21 @@
 
     <build>
         <plugins>
+	    <plugin>
+	      <!-- Build an executable JAR -->
+	      <groupId>org.apache.maven.plugins</groupId>
+	      <artifactId>maven-jar-plugin</artifactId>
+	      <version>${version.plugin.maven.jar}</version>
+	      <configuration>
+		<archive>
+		  <manifest>
+		    <addClasspath>true</addClasspath>
+		    <classpathPrefix>lib/</classpathPrefix>
+		    <mainClass>${mainClass}</mainClass>
+		  </manifest>
+		</archive>
+	      </configuration>
+	    </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
@@ -57,11 +73,11 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>${version.plugin.maven.compiler}</version>
-            </plugin>
+	    <plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-compiler-plugin</artifactId>
+		<version>${version.plugin.maven.compiler}</version>
+	    </plugin>
         </plugins>
     </build>
 </project>
