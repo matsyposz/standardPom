@@ -10,7 +10,7 @@
     <name>#NAME</name>
     <description>#DESC</description>
     <url>https://github.com/matsyposz</url>
-  
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -20,16 +20,16 @@
         <maven.compiler.encoding>${project.build.sourceEncoding}</maven.compiler.encoding>
         <maven.resources.encoding>${project.build.sourceEncoding}</maven.resources.encoding>
         <version.maven>3.5.3</version.maven>
-	<version.plugin.maven.jar>3.1.0</version.plugin.maven.jar>
+        <version.plugin.maven.jar>3.1.0</version.plugin.maven.jar>
         <version.plugin.maven.enforcer>3.0.0-M3</version.plugin.maven.enforcer>
         <version.plugin.maven.compiler>3.8.1</version.plugin.maven.compiler>
-	<junit.jupiter.version>5.6.2</junit.jupiter.version>
+        <junit.jupiter.version>5.6.2</junit.jupiter.version>
         <junit.platform.version>1.6.2</junit.platform.version>
-    	<mainClass>${project.groupId}.${project.artifactId}.App</mainClass>
+        <mainClass>${project.groupId}.${project.artifactId}.App</mainClass>
     </properties>
 
     <dependencies>
-	<dependency>
+        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
             <version>${junit.jupiter.version}</version>
@@ -45,20 +45,20 @@
 
     <build>
         <plugins>
-	    <plugin>
-	      <groupId>org.apache.maven.plugins</groupId>
-	      <artifactId>maven-jar-plugin</artifactId>
-	      <version>${version.plugin.maven.jar}</version>
-	      <configuration>
-		<archive>
-		  <manifest>
-		    <addClasspath>true</addClasspath>
-		    <classpathPrefix>lib/</classpathPrefix>
-		    <mainClass>${mainClass}</mainClass>
-		  </manifest>
-		</archive>
-	      </configuration>
-	    </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${version.plugin.maven.jar}</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <mainClass>${mainClass}</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
@@ -79,11 +79,11 @@
                     </execution>
                 </executions>
             </plugin>
-	    <plugin>
-		<groupId>org.apache.maven.plugins</groupId>
-		<artifactId>maven-compiler-plugin</artifactId>
-		<version>${version.plugin.maven.compiler}</version>
-	    </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${version.plugin.maven.compiler}</version>
+            </plugin>
         </plugins>
     </build>
 </project>
